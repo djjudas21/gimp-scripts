@@ -8,7 +8,7 @@ so I can begin work to port them to GIMP 3.x.
 Documentation around [Filter Plugins](https://script-fu.github.io/funky/hub/tutorials/folder/filter-plug-in/filter-plug-ins/) shows a new syntax required to register the script.
 It looks like registering the script into GIMP and registering a menu entry for the plugin are now two separate actions:
 
-```
+```scheme
 ;; Register the plug-in
 (script-fu-register-filter 
   "script-fu-simple-filter-plug-in"        ;; Main procedure name
@@ -25,3 +25,5 @@ It looks like registering the script into GIMP and registering a menu entry for 
   "script-fu-simple-filter-plug-in" 
   "<Image>/Plug-in")
 ```
+
+[This example](https://github.com/tshatrov/scriptfu/compare/gimp-2.10...34785f708fde4915896d6bf1d1a4d77f4d825886) shows the changes needed to port a script
