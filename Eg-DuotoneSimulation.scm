@@ -137,16 +137,15 @@
 ;
 ; Register the function with the GIMP
 ;
-(script-fu-register
-	"script-fu-Eg-DuotoneSimulation"
-	_"_Duotone Simulation"
-	"Simulate Duotones in GIMP"
-	"Martin Egger (martin.egger@gmx.net)"
-	"Martin Egger, Bern, Switzerland"
-	"28.02.2012"
+(script-fu-register-filter 
+	"script-fu-Eg-DuotoneSimulation"         ;; Main procedure name
+	"Duotone Simulation"                     ;; The name as it appears in the GIMP menu
+	"Simulate Duotones in GIMP"              ;; Tool-tip description
+	"Martin Egger (martin.egger@gmx.net)"    ;; Give yourself some credit
+	"License"                                ;; License
+	"28.02.2012"                             ;; Date written
 	"RGB* GRAY*"
-	SF-IMAGE	"The Image"	0
-	SF-DRAWABLE	"The Layer"	0
+	SF-ONE-DRAWABLE
 	SF-OPTION	"Select Tone"
 			'( 
 					"Cyano"
@@ -163,6 +162,7 @@
 	SF-TOGGLE	"Flatten Image"	FALSE
 )
 ;
-(script-fu-menu-register "script-fu-Eg-DuotoneSimulation"
+;; Specify the menu location for the plug-in
+(script-fu-menu-register
+  "script-fu-Eg-DuotoneSimulation"
 			 "<Image>/Filters/Eg")
-;
