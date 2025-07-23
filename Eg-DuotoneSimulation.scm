@@ -31,7 +31,7 @@
 ; Save history			
 ;
 	(gimp-image-undo-group-start InImage)
-	(if (= (car (gimp-drawable-is-rgb InLayer)) FALSE ) (gimp-image-convert-rgb InImage))
+	(if (not (gimp-drawable-is-rgb InLayer))) (gimp-image-convert-rgb InImage)
 ;
 	(let*	(
 		(TintLayer (car (gimp-layer-new InImage (car (gimp-image-width InImage)) (car (gimp-image-height InImage)) RGBA-IMAGE "Tint" 70.0 OVERLAY-MODE)))
